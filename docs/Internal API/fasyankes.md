@@ -98,7 +98,7 @@ Endpoint : POST /api/fasyankes/:uuid
 
 Request Header :
 
-- Authorization: "29sjdas91jksadn92nsasdo92nas92ndsa82"
+- Authorization: "bearer 29sjdas91jksadn92nsasdo92nas92ndsa82"
 
 Response Body (Success) :
 
@@ -130,7 +130,7 @@ Response Body (Failed) :
 
 ### Update Account Fasyankes
 
-Endpoint : PATCH/api/fasyankes/:uuid
+Endpoint : PATCH /api/fasyankes/:uuid
 
 Request Body :
 
