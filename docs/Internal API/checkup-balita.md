@@ -131,7 +131,7 @@ Response Body (Success) :
 Response Body (Failed) :
 
 ```
-  "message" : "field {...} is required"
+  "error" : "field {...} is required"
 ```
 
 ### Update Checkup Balita
@@ -172,9 +172,8 @@ Response Body (Success) :
 Response Body (Failed) :
 
 ```
-  "message" : "Checkup not found"
+  "error" : "Checkup not found"
 ```
-
 
 ### Delete Checkup Balita
 
@@ -202,5 +201,5 @@ Response Body (Success) :
 Response Body (Failed) :
 
 ```
-  "message" : "Checkup not found"
+  "error" : "Checkup not found"
 ```
