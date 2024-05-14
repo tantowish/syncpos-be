@@ -140,7 +140,7 @@ Response Body (Success) :
 Response Body (Failed) :
 
 ```
-  "message" : "field {...} is required"
+  "error" : "field {...} is required"
 ```
 
 ### Update Checkup Lansia
@@ -186,7 +186,7 @@ Response Body (Success) :
 Response Body (Failed) :
 
 ```
-  "message" : "Checkup not found"
+  "error" : "Checkup not found"
 ```
 
 ### Delete Checkup Lansia
@@ -216,5 +216,5 @@ Response Body (Success) :
 Response Body (Failed) :
 
 ```
-  "message" : "Checkup not found"
+  "error" : "Checkup not found"
 ```
