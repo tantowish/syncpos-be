@@ -94,7 +94,7 @@ Response Body (Failed) :
 
 ### Get Fasyankes
 
-Endpoint : POST /api/fasyankes/:uuid
+Endpoint : GET /api/fasyankes/:uuid
 
 Request Header :
 
