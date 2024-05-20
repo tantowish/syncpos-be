@@ -7,7 +7,7 @@ module.exports = {
       nik: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.STRING
+        type: Sequelize.STRING(16)
       },
       nama: {
         type: Sequelize.STRING

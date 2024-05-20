@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('balita_pemeriksaan', {
+    await queryInterface.createTable('lansia_pemeriksaan', {
       id: {
         allowNull: false,
         primaryKey: true,
@@ -14,7 +14,9 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'pasien',
-          key: 'nik'
+          key: 'nik',
+          onDelete: 'CASCADE',
+          onUpdate: 'CASCADE'
         }
       },
       fasyankes_id: {
@@ -22,7 +24,9 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'fasyankes',
-          key: 'id'
+          key: 'id',
+          onDelete: 'CASCADE',
+          onUpdate: 'CASCADE'
         }
       },
       berat_badan: {
