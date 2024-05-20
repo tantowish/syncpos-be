@@ -10,12 +10,12 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      postId: {
+      fasyankes_id: {
         type: Sequelize.UUID,
-        refferences: {
+        allowNull: false,
+        references: {
           model: 'fasyankes',
-          key: 'id',
-          onDelete: 'CASCADE'
+          key: 'id'
         }
       },
       api_key: {
