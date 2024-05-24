@@ -12,7 +12,7 @@ npm install
 
 ```
 
-sequelize db:migrate
+npx sequelize-cli db:migrate
 
 ```
 
@@ -22,7 +22,7 @@ sequelize db:migrate
 
 ```
 
-sequelize db:seed:all
+npx sequelize-cli db:seed:all
 
 ```
 
