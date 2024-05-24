@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'DataIntegrasi',
+    tableName: 'data_integrasi'
   });
   return DataIntegrasi;
 };

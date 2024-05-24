@@ -5,22 +5,17 @@ const specs = require('./swagger');
 
 const app = express();
 
-const postRoute = require('./routes/post');
-const userRoute = require('./routes/user');
-const commentRoute = require('./routes/commentRouter');
-const categoryRoute = require('./routes/categoryRouter');
-const imageRoute = require('./routes/image');
+const authRoute = require('./routes/auth.route');
+const dataIntegrasiRoute = require('./routes/data-integrasi.route');
 
 app.use(bodyParser.json());
 
 //Static for images
 app.use('/uploads', express.static('uploads'));
 //Routes
-app.use('/posts', postRoute);
-app.use('/auth', userRoute);
-app.use('/comments', commentRoute);
-app.use('/categories', categoryRoute);
-app.use('/images', imageRoute);
+app.use('/api/auth', authRoute);
+app.use('/api/data-integrasi', dataIntegrasiRoute);
+
 //Documentation
 app.use('/', swaggerUi.serve, swaggerUi.setup(specs));
 

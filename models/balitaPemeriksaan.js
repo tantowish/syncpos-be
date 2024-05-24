@@ -11,13 +11,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       [
-        BalitaPemeriksaan.hasMany(models.Post, { foreignKey: 'categoryId' }),
-      ]
+        BalitaPemeriksaan.belongsTo(models.Pasien, { foreignKey: 'nik' }),
+        BalitaPemeriksaan.belongsTo(models.Fasyankes, { foreignKey: 'fasyankes_id' }),      ]
     }
   }
 
   BalitaPemeriksaan.init({
-    id: DataTypes.UUID,
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
+      allowNull: false
+    },
     nik: DataTypes.STRING,
     fasyankes_id: DataTypes.UUID,
     berat_badan: DataTypes.FLOAT,

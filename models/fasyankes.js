@@ -18,6 +18,12 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Fasyankes.init({
+    id: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
+      allowNull: false
+    },
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     nama_fasyankes: DataTypes.STRING,
