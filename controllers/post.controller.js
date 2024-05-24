@@ -1,7 +1,6 @@
 const models = require('../models');
 //Validator
 const Validator = require('fastest-validator');
-const jwt = require('jsonwebtoken'); // Importing JWT library
 
 async function index(req, res) {
   try {

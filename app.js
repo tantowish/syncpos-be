@@ -8,6 +8,7 @@ const app = express();
 const authRoute = require('./routes/auth.route');
 const dataIntegrasiRoute = require('./routes/data-integrasi.route');
 const pasienRoute = require('./routes/pasien.route');
+const fasyankesRoute = require('./routes/fasyankes.route');
 
 app.use(bodyParser.json());
 
@@ -17,6 +18,7 @@ app.use('/uploads', express.static('uploads'));
 app.use('/api/auth', authRoute);
 app.use('/api/data-integrasi', dataIntegrasiRoute);
 app.use('/api/pasien', pasienRoute);
+app.use('/api/fasyankes', fasyankesRoute);
 
 //Documentation
 app.use('/', swaggerUi.serve, swaggerUi.setup(specs));

@@ -50,7 +50,13 @@ async function store(req, res) {
     }
 
     const validator = new Validator();
-    await validator.validate(req.body, schema);
+    const validationResponse = await validator.validate(req.body, schema);
+
+    if (validationResponse !== true) {
+      return res.status(400).send({
+        error: validationResponse
+      })
+    }
 
     const pasien = await models.Pasien.create(req.body);
 
@@ -85,7 +91,14 @@ async function update(req, res) {
     }
 
     const validator = new Validator();
-    await validator.validate(req.body, schema);
+    const validationResponse = await validator.validate(req.body, schema);
+
+    if (validationResponse !== true) {
+      return res.status(400).send({
+        error: validationResponse
+      })
+    }
+
     const updatedPasien = await pasien.update(req.body);
 
     res.status(200).send({

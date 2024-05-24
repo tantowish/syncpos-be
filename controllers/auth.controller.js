@@ -1,6 +1,6 @@
-  const models = require('../models');
-  const bcryptjs = require('bcryptjs');
-  const jwt = require('jsonwebtoken');
+const models = require('../models');
+const bcryptjs = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 async function login(req, res) {
   try {
@@ -12,7 +12,7 @@ async function login(req, res) {
 
     if (!fasyankes) {
       return res.status(404).send({
-        message: 'Fasyankes not found'
+        error: 'Fasyankes not found'
       });
     }
 
@@ -20,7 +20,7 @@ async function login(req, res) {
 
     if (!isMatch) {
       return res.status(401).send({
-        message: 'Invalid credentials'
+        error: 'Invalid credentials'
       });
     }
 
@@ -34,7 +34,7 @@ async function login(req, res) {
     });
   } catch (error) {
     res.status(500).send({
-      message: 'Internal Server Error'
+      error: 'Internal Server Error'
     });
   }
 }
@@ -49,7 +49,7 @@ async function register(req, res) {
 
     if (isFasyankesExist) {
       return res.status(409).send({
-        message: 'Fasyankes already exists'
+        error: 'Fasyankes already exists'
       });
     }
 
@@ -82,9 +82,9 @@ async function register(req, res) {
         email: newFasyankes.email
       }
     });
-  } catch (error) {
+  } catch (err) {
     res.status(500).send({
-      message: error.message
+      error: err.message
     });
   }
 }
