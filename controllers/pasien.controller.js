@@ -44,7 +44,7 @@ async function store(req, res) {
       nik: { type: 'string', optional: false, min: '16', max: '16' },
       nama: { type: 'string', optional: false, max: '100' },
       alamat: { type: 'string', optional: false, max: '100' },
-      tanggal_lahir: { type: 'date', optional: false },
+      tanggal_lahir: { type: 'string', optional: false },
       status: { type: 'enum', optional: false, values: ['balita', 'lansia'] },
       jenis_kelamin: { type: 'enum', optional: false, values: ['l', 'p'] },
     }
@@ -85,7 +85,7 @@ async function update(req, res) {
       nik: { type: 'string', optional: false, min: '16', max: '16' },
       nama: { type: 'string', optional: false, max: '100' },
       alamat: { type: 'string', optional: false, max: '100' },
-      tanggal_lahir: { type: 'date', optional: false },
+      tanggal_lahir: { type: 'string', optional: false },
       status: { type: 'enum', optional: false, values: ['balita', 'lansia'] },
       jenis_kelamin: { type: 'enum', optional: false, values: ['l', 'p'] },
     }

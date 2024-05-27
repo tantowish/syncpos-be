@@ -22,10 +22,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      lokasi: {
-        allowNull: false,
-        type: Sequelize.STRING
-      },
       provinsi: {
         allowNull: false,
         type: Sequelize.STRING

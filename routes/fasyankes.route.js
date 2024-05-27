@@ -1,12 +1,14 @@
 const express = require('express');
 const fasyankesController = require('../controllers/fasyankes.controller');
+const { checkAuth } = require('../middleware/check-auth');
 
 const router = express.Router();
 
-router.get('/', fasyankesController.index);
-router.get('/:id', fasyankesController.show);
-router.post('/', fasyankesController.store);
-router.patch('/:id', fasyankesController.update);
-router.delete('/:id', fasyankesController.destroy);
+router.post('/login', fasyankesController.login);
+router.post('/register', fasyankesController.register);
+router.get('/', checkAuth, fasyankesController.index);
+router.get('/:id', checkAuth, fasyankesController.show);
+router.patch('/:id', checkAuth, fasyankesController.update);
+router.delete('/:id', checkAuth, fasyankesController.destroy);
 
 module.exports = router

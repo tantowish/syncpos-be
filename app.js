@@ -5,7 +5,6 @@ const specs = require('./swagger');
 
 const app = express();
 
-const authRoute = require('./routes/auth.route');
 const dataIntegrasiRoute = require('./routes/data-integrasi.route');
 const pasienRoute = require('./routes/pasien.route');
 const fasyankesRoute = require('./routes/fasyankes.route');
@@ -14,10 +13,7 @@ const balitaRoute = require('./routes/balitaPemeriksaan.route');
 
 app.use(bodyParser.json());
 
-//Static for images
-app.use('/uploads', express.static('uploads'));
 //Routes
-app.use('/api/auth', authRoute);
 app.use('/api/data-integrasi', dataIntegrasiRoute);
 app.use('/api/patient', pasienRoute);
 app.use('/api/fasyankes', fasyankesRoute);

@@ -2,7 +2,7 @@
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
+  async up(queryInterface, Sequelize) {
     await queryInterface.createTable('data_integrasi', {
       id: {
         allowNull: false,
@@ -15,8 +15,10 @@ module.exports = {
         allowNull: false,
         references: {
           model: 'fasyankes',
-          key: 'id'
-        }
+          key: 'id',
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
       },
       api_key: {
         allowNull: false,
@@ -33,7 +35,7 @@ module.exports = {
     });
   },
 
-  async down (queryInterface, Sequelize) {
+  async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('data_integrasi');
   }
 };

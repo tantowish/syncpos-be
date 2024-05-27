@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       tanggal_lahir: {
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       status: {
         type: Sequelize.ENUM('balita', 'lansia')
