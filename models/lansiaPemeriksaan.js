@@ -30,10 +30,12 @@ module.exports = (sequelize, DataTypes) => {
     tinggi_badan: DataTypes.FLOAT,
     tekanan_darah: DataTypes.STRING,
     denyut_nadi: DataTypes.STRING,
-    assesment: DataTypes.STRING
+    assesment: DataTypes.STRING,
+    umur: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'LansiaPemeriksaan',
+    tableName: 'lansia_pemeriksaan'
   });
   return LansiaPemeriksaan;
 };

@@ -18,7 +18,12 @@ module.exports = (sequelize, DataTypes) => {
   }
 
   Pasien.init({
-    nik: DataTypes.STRING,
+    nik: {
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false
+    },    
     nama: DataTypes.STRING,
     alamat: DataTypes.TEXT,
     tanggal_lahir: DataTypes.DATE,
@@ -27,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Pasien',
+    tableName: 'pasien'
   });
   return Pasien;
 };
