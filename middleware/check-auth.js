@@ -23,6 +23,39 @@ function checkAuth(req, res, next) {
   }
 }
 
+function fasyankesAuth(req, res, next) {
+  try {
+    const token = req.headers.authorization.split(' ')[1];
+
+    // verifies secret and checks expiration
+    jwt.verify(token, process.env.JWT_KEY, (err, decoded) => {
+      if (err) {
+        return res.status(500).send({
+          auth: false,
+          message: 'Unauthorized'
+        });
+      }
+      req.user = decoded.id;
+      idFromUrl = req.params.id
+
+      if (req.user !== idFromUrl) {
+        return res.status(401).send({
+          auth: false,
+          message: 'Unauthorized'
+        });
+      }
+
+      next();
+    });
+  } catch (e) {
+    return res.status(401).send({
+      auth: false,
+      message: 'No token provided.'
+    });
+  }
+}
+
 module.exports = {
-  checkAuth
+  checkAuth,
+  fasyankesAuth
 }
