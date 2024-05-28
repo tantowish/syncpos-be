@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get('/', pasienController.index);
 router.get('/:nik', checkAuth, pasienController.show);
+router.get('/:nik/checkup', checkAuth, pasienController.showCheckup);
 router.post('/', checkAuth, pasienController.store);
 // router.patch('/:nik', checkAuth, pasienController.update);
 // router.delete('/:nik', checkAuth, pasienController.destroy);

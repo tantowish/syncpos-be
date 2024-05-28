@@ -38,6 +38,37 @@ async function show(req, res) {
   }
 }
 
+async function showCheckup(req, res) {
+  try {
+    const nik = req.params.nik;
+    const pasien = await models.Pasien.findByPk(nik, {
+      include: [
+        {
+          model: models.BalitaPemeriksaan
+        },
+        {
+          model: models.LansiaPemeriksaan
+        }
+      ]
+    });
+    // Not found
+    if (!pasien) {
+      return res.status(404).send({
+        error: 'Pasien not found'
+      })
+    }
+
+    res.status(200).send({
+      message: 'Success',
+      data: pasien
+    })
+  } catch (err) {
+    res.status(500).send({
+      error: err.message
+    })
+  }
+}
+
 async function store(req, res) {
   try {
     const schema = {
@@ -140,5 +171,6 @@ module.exports = {
   show,
   store,
   update,
-  destroy
+  destroy,
+  showCheckup
 }
