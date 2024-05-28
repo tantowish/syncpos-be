@@ -36,7 +36,7 @@ async function login(req, res) {
     });
   } catch (error) {
     res.status(500).send({
-      error: 'Internal Server Error'
+      error: error.message
     });
   }
 }

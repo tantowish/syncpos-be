@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const swaggerUi = require('swagger-ui-express');
 const specs = require('./swagger');
 
+require('dotenv').config();
+
 const app = express();
 
 const dataIntegrasiRoute = require('./routes/data-integrasi.route');
