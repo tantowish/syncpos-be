@@ -14,11 +14,22 @@ const balitaRoute = require('./routes/balitaPemeriksaan.route');
 app.use(bodyParser.json());
 
 //Routes
+app.get('/api', (req, res) => {
+    res.json({
+        message: 'see full documentation',
+        documentation_url: 'https://github.com/tantowish/syncpos-be/tree/main/docs'
+    });
+});
 app.use('/api/data-integrasi', dataIntegrasiRoute);
 app.use('/api/patient', pasienRoute);
 app.use('/api/fasyankes', fasyankesRoute);
 app.use('/api/checkup/lansia', lansiaRoute);
 app.use('/api/checkup/balita', balitaRoute);
+
+// External route
+app.use('/api/syncpos/patient', pasienRoute);
+app.use('/api/syncpos/checkup/lansia', lansiaRoute);
+app.use('/api/syncpos/checkup/balita', balitaRoute);
 
 //Documentation
 app.use('/', swaggerUi.serve, swaggerUi.setup(specs));
