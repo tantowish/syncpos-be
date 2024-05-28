@@ -101,7 +101,6 @@ async function show(req, res) {
     try {
       const schema = {
         nik: { type: 'string', optional: true, min: '16', max: '16' },
-        fasyankes_id: { type: 'uuid', optional: true, max: '36' },
         berat_badan: { type: 'number', optional: true },
         tinggi_badan: { type: 'number', optional: true },
         lingkar_kepala: { type: 'number', optional: true }
