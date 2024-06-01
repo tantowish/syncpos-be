@@ -44,10 +44,12 @@ async function showCheckup(req, res) {
     const pasien = await models.Pasien.findByPk(nik, {
       include: [
         {
-          model: models.BalitaPemeriksaan
+          model: models.BalitaPemeriksaan,
+          include: [models.Fasyankes]
         },
         {
-          model: models.LansiaPemeriksaan
+          model: models.LansiaPemeriksaan,
+          include: [models.Fasyankes]
         }
       ]
     });

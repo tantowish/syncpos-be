@@ -8,7 +8,7 @@ async function get(req, res){
               fasyankes_id: req.user
             }
           });
-        res.status(201).send({
+        res.status(200).send({
         message: 'Success',
         data: dataIntegrasi
         });

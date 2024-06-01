@@ -30,9 +30,8 @@ async function login(req, res) {
 
     return res.status(200).send({
       message: 'Fasyankes logged in successfully',
-      data: {
-        token: token
-      }
+      data: fasyankes,
+      token: token
     });
   } catch (error) {
     res.status(500).send({
